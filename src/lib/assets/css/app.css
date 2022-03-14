@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+a {
+  @apply hover:underline text-blue-400 italic;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  @apply tracking-tight;
+}

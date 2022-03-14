@@ -2,6 +2,7 @@
 title: Store GCLID in Cookie and Send to Hubspot
 slug: store-gclid-cookie-send-to-hubspot
 description: Store parameters like GCLID and UTMs in cookies, and add them to your form submissions, all inside GTM. Welcome to Offline Conversion Tracking utopia.
+date: 2017-09-25
 ---
 
 # {title}
@@ -11,7 +12,7 @@ description: Store parameters like GCLID and UTMs in cookies, and add them to yo
 So, you've got an AdWords campaign running, which means you've got an ad that links to your website. When someone clicks your ad, the URL to the page on your website has a GCLID parameter appended to it:
 
 ```
-http://yourwebsite.com/your-landing-page/?gclid=blah
+https://yourwebsite.com/your-landing-page/?gclid=blah
 ```
 
 This works perfectly fine if the user converts **on that page.** You can, through several methods, directly attribute this conversion to your specific ad. Then, if the user uses the same email address when purchasing offline as they did in the form, you can attribute that purchase to your ad as well.

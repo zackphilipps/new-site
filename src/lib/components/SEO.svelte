@@ -7,6 +7,6 @@
 </script>
 
 <svelte:head>
-  <title>{title}</title>
+  <title>{title} | Zack Philipps</title>
   <meta name="description" content={description} />
 </svelte:head>

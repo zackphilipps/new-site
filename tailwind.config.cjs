@@ -6,8 +6,7 @@ module.exports = {
       current: 'currentColor',
       white: '#ffffff',
       teal: {
-        30: 'hsl(178deg 30% 92% / 30%)',
-        60: 'hsl(178deg 30% 92% / 60%)',
+        60: 'hsl(178deg 32% 95%)',
         100: 'hsl(178deg 30% 92%)',
         200: 'hsl(178deg 30% 82%)',
         300: 'hsl(178deg 30% 72%)',
@@ -19,6 +18,7 @@ module.exports = {
         900: 'hsl(178deg 30% 12%)'
       },
       'teal-alt': {
+        60: 'hsl(178deg 52% 95%)',
         100: 'hsl(178deg 50% 92%)',
         200: 'hsl(178deg 50% 82%)',
         300: 'hsl(178deg 50% 72%)',
@@ -147,20 +147,30 @@ module.exports = {
     },
     extend: {
       typography: ({ theme }) => ({
+        DEFAULT: {
+          css: {
+            a: {
+              textDecoration: 'none',
+              '&:hover': {
+                textDecoration: 'underline'
+              }
+            }
+          }
+        },
         teal: {
           css: {
-            '--tw-prose-body': theme('colors.teal[700]'),
+            '--tw-prose-body': theme('colors.teal[800]'),
             '--tw-prose-headings': theme('colors.teal[700]'),
             '--tw-prose-lead': theme('colors.teal[700]'),
             '--tw-prose-links': theme('colors.blue[400]'),
-            '--tw-prose-bold': theme('colors.teal[600]'),
+            '--tw-prose-bold': theme('colors.teal[800]'),
             '--tw-prose-counters': theme('colors.teal[600]'),
             '--tw-prose-bullets': theme('colors.teal[400]'),
             '--tw-prose-hr': theme('colors.teal[200]'),
             '--tw-prose-quotes': theme('colors.teal[600]'),
             '--tw-prose-quote-borders': theme('colors.teal[300]'),
             '--tw-prose-captions': theme('colors.teal[700]'),
-            '--tw-prose-code': theme('colors.teal[600]'),
+            '--tw-prose-code': theme('colors.teal[700]'),
             '--tw-prose-pre-code': theme('colors.teal[100]'),
             '--tw-prose-pre-bg': theme('colors.teal[800]'),
             '--tw-prose-th-borders': theme('colors.teal[300]'),
