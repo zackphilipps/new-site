@@ -6,7 +6,7 @@
 </script>
 
 <div class="p-8">
-  <header class="border-b border-b-teal-200 pt-3 pb-2 px-4 -mt-8 -mx-8 sticky top-0 bg-teal-alt-60 z-50">
+  <header class="border-b border-b-teal-200 pt-3 pb-2 px-4 -mt-8 -mx-8 sticky top-0 bg-teal-alt-100 z-50">
     <p>
       <a href="/" class="group inline-flex items-center">
         <svg
