@@ -6,7 +6,7 @@
 
 <div class="p-8">
   <header>
-    <Prose class="md:py-16">
+    <Prose class="md:py-8">
       <div class="not-prose">
         <img class="w-36 h-36 md:w-56 md:h-56 md:mx-auto rounded-full" src={ProfilePhoto} alt="Zack Philipps Avatar" />
       </div>

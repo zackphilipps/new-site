@@ -21,84 +21,110 @@ But what if the user navigates elsewhere on the site? Unless you've got some Jav
 
 ---
 
-## Enter The Cookie: Offline Conversion Tracking's Best Friend
+## Enter the Cookie: Offline Conversion Tracking's Best Friend
 
-A better method is [store the GCLID in a cookie](https://support.google.com/adwords/answer/7012522?hl=en). That way, even if the user completely closes the site and revisits it later by typing in the domain name... The cookie will still exist.
+A better method is to [store the GCLID in a cookie](https://support.google.com/adwords/answer/7012522?hl=en). That way, even if the user completely closes the site and revisits it later by typing in the domain name... The cookie will still exist.
 
 ![Hilarious Cookie Monster Comic](/images/2017/09/cookie-monster.jpg)
 
-Since I've been asked to do this at work a few times, I've taken the liberty of creating a utility function – with a few dependencies. Since it's written in vanilla JavaScript, **it can be added directly to Google Tag Manager.**
+Since I've been asked to do this at work a few times, I've taken the liberty of creating a utility function. Since it's written in vanilla JavaScript, **it can be added directly to Google Tag Manager.**
 
 This solution can be applied to any tracking parameters you want to pass along with your form submissions anywhere on your site. For example, another use case would be to pass UTM parameters with form submissions that get sent to Salesforce, since Salesforce CRM doesn't have a global tracking code like Hubspot and Google Analytics.
 
 You can also pass along any parameters you want to get more granular insights and reporting on any platform.
 
-### Dependencies
+## The code
 
-#### Get Cookie
+The function is called `assignTrackingParameterToCookie`, and it accepts two arguments. The first is the name of the URL parameter you want to pass along, and the second is the form type. Currently, the only options for form type are `hubspot` and `gform` (Gravity Forms.) However, this script can easily be modified to allow for other form types.
+
+Here is the full code snippet for you to copy and modify:
 
 ```js
-function getCookie(name) {
-  var value = '; ' + document.cookie
-  var parts = value.split('; ' + name + '=')
-  if (parts.length == 2) return parts.pop().split(';').shift()
+// Pass Tracking Parameters to a Form on Another Page Using GTM
+// http://zackphilipps.com/store-gclid-cookie-send-to-hubspot/
+
+/**
+ * Assigns the supplied URL parameter to a cookie and each form field with a name that matches.
+ * You can keep calling this function multiple times for each URL parameter you want to pass along, e.g.
+ *
+ * window.onload = function () {
+ *   assignTrackingParameterToCookie("gclid", "hubspot");
+ *   assignTrackingParameterToCookie("utm_source", "gform");
+ *   assignTrackingParameterToCookie("<YOUR_UTM>", "<YOUR_FORM_TYPE>");
+ * };
+ *
+ * @param {string} fieldParam - The name of the URL parameter. In this case, `gclid`.
+ *                              Could also be any UTM parameter such as `utm_source`.
+ *                              MUST match the input name (HubSpot)
+ *                              or one of its CSS classes (Gravity Forms).
+ * @param {string} formType - The type of form. Currently only supports 'hubspot' (the default)
+ *                            or 'gform'.
+ */
+function assignTrackingParameterToCookie(fieldParam, formType = 'hubspot') {
+  var field = getParam(fieldParam),
+    inputs
+
+  if (field) {
+    setCookie(fieldParam, field, 365)
+  }
+
+  if (formType === 'gform') {
+    inputs = document.querySelectorAll('.' + fieldParam + ' input[type="text"]')
+    assignCookieValueToFormInput(fieldParam, inputs)
+  } else if (formType === 'hubspot') {
+    inputs = document.querySelectorAll('.hs-input[name="' + fieldParam + '"]')
+    assignCookieValueToFormInput(fieldParam, inputs)
+  }
+
+  function assignCookieValueToFormInput(fieldParam, inputs) {
+    var field = getCookie(fieldParam),
+      length = inputs.length
+
+    if (field && length) {
+      for (var i = 0; i < length; i++) {
+        inputs[i].value = field
+      }
+    }
+  }
+
+  /**
+   * utility functions
+   */
+  function getCookie(name) {
+    var value = '; ' + document.cookie
+    var parts = value.split('; ' + name + '=')
+    if (parts.length == 2) return parts.pop().split(';').shift()
+  }
+  function setCookie(name, value, days) {
+    var date = new Date()
+    date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000)
+    var expires = '; expires=' + date.toGMTString()
+    document.cookie = name + '=' + value + expires + ';path=/'
+  }
+  function getParam(p) {
+    var match = RegExp('[?&]' + p + '=([^&]*)').exec(window.location.search)
+    return match && decodeURIComponent(match[1].replace(/\+/g, ' '))
+  }
 }
-```
 
-Retrieves a cookie value based on its name. **Usage:** `getCookie('gclid');`
-
-#### Set Cookie
-
-```js
-function setCookie(name, value, days) {
-  var date = new Date()
-  date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000)
-  var expires = '; expires=' + date.toGMTString()
-  document.cookie = name + '=' + value + expires + ';path=/'
-}
-```
-
-Creates or saves a cookie. Name it, set the value, and set the number of days it will exist. **Usage:** `setCookie('gclid', 'blah', 365);`
-
-#### Get Parameter
-
-```js
-function getParam(p) {
-  var match = RegExp('[?&]' + p + '=([^&]*)').exec(window.location.search)
-  return match && decodeURIComponent(match[1].replace(/\+/g, ' '))
-}
-```
-
-Gets the value of a URL parameter by name. **Usage:** `getParam('gclid');`
-
-### All Together Now
-
-This is the part you copy and paste. However, **keep reading the rest of this post,** because this code block won't do anything on its own. It just defines functions; it's on you to use them to suit your needs.
-
-<!-- <script src="https://gist.github.com/zackphilipps/a63ae55f13b06c1b443e755fa8e8404f.js"></script> -->
-
-**Usage:** `assignTrackingParameterToCookie('gclid', 'hubspot');`
-
-**Make sure to wrap this in a** `window.onload`, and simply repeat for each parameter you want to save. **Example:**
-
-```js
+/**
+ * Example usage!
+ * `window.onload` is necessary to ensure all form fields have loaded.
+ */
 window.onload = function () {
   assignTrackingParameterToCookie('gclid', 'hubspot')
   assignTrackingParameterToCookie('utm_source', 'gform')
-  assignTrackingParameterToCookie('utm_medium', 'gform')
-  assignTrackingParameterToCookie('utm_campaign', 'gform')
+  assignTrackingParameterToCookie('<YOUR_UTM>', '<YOUR_FORM_TYPE>')
 }
 ```
 
-Currently, the only option for the 2nd argument (`formType`) besides `hubspot` is `gform`, which is Gravity Form. However, this script can easily be modified to allow for other form types.
-
-#### Hubspot
+### Usage with Hubspot
 
 The way this works for Hubspot forms is that you will need to create hidden fields that match your parameter names **exactly.** So if your parameter is `gclid`, you will need a hidden field called `gclid`:
 
 ![Hubspot Edit Screen](/images/2017/09/hubspot-edit-screen-1.jpg)
 
-#### Gravity Forms
+### Usage with Gravity Forms
 
 For Gravity Forms, you need to make a Text field – NOT hidden field – so you can add a class to it. The class must match your parameter name.
 
@@ -106,6 +132,6 @@ For Gravity Forms, you need to make a Text field – NOT hidden field – so you
 
 ---
 
-### Conclusion
+## Conclusion
 
-I hope you find this useful! It can be used in any number of ways. We're certainly getting a lot of mileage out of it at [Element Three](https://elementthree.com/). Any questions or suggestions, please let me know in the comments section below.
+I hope you find this useful! It can be used in any number of ways. We're certainly getting a lot of mileage out of it at [Element Three](https://elementthree.com/). Any questions or suggestions, please leave a comment on [this gist.](https://gist.github.com/zackphilipps/a63ae55f13b06c1b443e755fa8e8404f)

@@ -12,3 +12,16 @@ h3,
 h4 {
   @apply tracking-tight;
 }
+
+.ellipsis {
+  @apply whitespace-nowrap text-ellipsis overflow-hidden;
+}
+
+/* @media (max-width: 1199px) {
+  pre {
+    width: 100vw;
+    position: relative;
+    left: calc(-50vw + 50%);
+    border-radius: 0 !important;
+  }
+} */

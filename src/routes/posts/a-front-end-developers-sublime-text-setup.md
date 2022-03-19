@@ -1,5 +1,5 @@
 ---
-title: A Front End Developer's Sublime Text Setup
+title: A Front End Developer’s Sublime Text Setup
 slug: a-front-end-developers-sublime-text-setup
 description:
 date: 2015-03-27
