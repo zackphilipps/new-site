@@ -113,4 +113,4 @@ Hopefully some of this got you more excited about working with Scratch and ACF. 
 
 #### Related Posts
 
-- [A WordPress Development Workflow for Small Teams in 2015](https://zackphilipps.com/a-wordpress-development-workflow-for-small-teams-in-2015/)
+- [A WordPress Development Workflow for Small Teams in 2015](https://zackphilipps.dev/posts/a-wordpress-development-workflow-for-small-teams-in-2015/)

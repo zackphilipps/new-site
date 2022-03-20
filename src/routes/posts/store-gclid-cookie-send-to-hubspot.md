@@ -43,7 +43,7 @@ Here is the full code snippet for you to copy and modify:
 
 ```js
 // Pass Tracking Parameters to a Form on Another Page Using GTM
-// http://zackphilipps.com/store-gclid-cookie-send-to-hubspot/
+// https://zackphilipps.dev/posts/store-gclid-cookie-send-to-hubspot/
 
 /**
  * Assigns the supplied URL parameter to a cookie and each form field with a name that matches.

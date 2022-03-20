@@ -40,7 +40,7 @@ Right off the bat Atom comes with default packages, which you can disable. I imm
 
 In fact, most of what I had to adjust to with Atom was keybindings. I had a few custom ones set up in Sublime that I struggled with in Atom. This is because I was adding them incorrectly. (They're case sensitive.)
 
-As mentioned in [A Front End Developer's Sublime Text Setup,](https://zackphilipps.com/a-front-end-developers-sublime-text-setup/) I had been used to using `shift-cmd-d` to **delete** lines and `alt-cmd-d` to **duplicate** lines. Well, I added my keybindings like so:
+As mentioned in [A Front End Developer's Sublime Text Setup,](https://zackphilipps.dev/posts/a-front-end-developers-sublime-text-setup/) I had been used to using `shift-cmd-d` to **delete** lines and `alt-cmd-d` to **duplicate** lines. Well, I added my keybindings like so:
 
 ```
 'atom-workspace atom-text-editor:not([mini])':

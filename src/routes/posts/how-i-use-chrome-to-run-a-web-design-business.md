@@ -9,7 +9,7 @@ date: 2015-04-04
 
 ![How I Use Chrome to Run a Web Design Business](/images/2015/04/google-chrome-2.jpg)
 
-As previously mentioned in [A Front End Developer’s Daily App Stack](https://zackphilipps.com/a-front-end-developers-daily-app-stack/), I use Chrome Beta even though I'd like to use Safari on Yosemite because I strongly prefer Chrome's DevTools. I thought it would be fun to write about some of the web apps I use as well as my Chrome extensions.
+As previously mentioned in [A Front End Developer’s Daily App Stack](https://zackphilipps.dev/posts/a-front-end-developers-daily-app-stack/), I use Chrome Beta even though I'd like to use Safari on Yosemite because I strongly prefer Chrome's DevTools. I thought it would be fun to write about some of the web apps I use as well as my Chrome extensions.
 
 ---
 
@@ -57,7 +57,7 @@ Tribeswell isn't much into the **social media** game at the moment, but when we 
 
 ### Strictly Dev
 
-I'll talk about these more in-depth [in another post](https://zackphilipps.com/a-wordpress-development-workflow-for-small-teams-in-2015/), but for now:
+I'll talk about these more in-depth [in another post](https://zackphilipps.dev/posts/a-wordpress-development-workflow-for-small-teams-in-2015/), but for now:
 
 - GitHub
 - Bitbucket
@@ -93,7 +93,7 @@ If you don't have this, what's wrong with you? [Get it, now!](https://chrome.goo
 
 ### GhostText
 
-My coworker recently alerted me to the existence of this gem. It allows me to press `cmd+shift+K` to instantly start using [Sublime Text](https://zackphilipps.com/a-front-end-developers-sublime-text-setup/) instead of whatever shitty `textarea` I am currently using to code in (read: WordPress). You just have to have the [extension](https://chrome.google.com/webstore/detail/ghosttext-for-chrome/godiecgffnchndlihlpaajjcplehddca?hl=en) and the [package](https://github.com/Cacodaimon/GhostText-for-SublimeText) installed.
+My coworker recently alerted me to the existence of this gem. It allows me to press `cmd+shift+K` to instantly start using [Sublime Text](https://zackphilipps.dev/posts/a-front-end-developers-sublime-text-setup/) instead of whatever shitty `textarea` I am currently using to code in (read: WordPress). You just have to have the [extension](https://chrome.google.com/webstore/detail/ghosttext-for-chrome/godiecgffnchndlihlpaajjcplehddca?hl=en) and the [package](https://github.com/Cacodaimon/GhostText-for-SublimeText) installed.
 
 ### Minimal New Tab Clock
 
@@ -113,6 +113,6 @@ There are tons of ["New Tab" extensions](https://chrome.google.com/webstore/sear
 
 #### Related Posts
 
-- [A Front End Developer’s Daily App Stack](https://zackphilipps.com/a-front-end-developers-daily-app-stack/)
-- [A Front End Developer's Sublime Text Setup](https://zackphilipps.com/a-front-end-developers-sublime-text-setup/)
-- [A WordPress Development Workflow for Small Teams in 2015](https://zackphilipps.com/a-wordpress-development-workflow-for-small-teams-in-2015/)
+- [A Front End Developer’s Daily App Stack](https://zackphilipps.dev/posts/a-front-end-developers-daily-app-stack/)
+- [A Front End Developer's Sublime Text Setup](https://zackphilipps.dev/posts/a-front-end-developers-sublime-text-setup/)
+- [A WordPress Development Workflow for Small Teams in 2015](https://zackphilipps.dev/posts/a-wordpress-development-workflow-for-small-teams-in-2015/)

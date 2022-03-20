@@ -310,6 +310,6 @@ Now, you can add `<?php auth_redirect(); ?>` to `header.php`. But only on the de
 
 #### Related Posts
 
-- [A Front End Developer’s Daily App Stack](https://zackphilipps.com/a-front-end-developers-daily-app-stack/)
-- [A Front End Developer's Sublime Text Setup](https://zackphilipps.com/a-front-end-developers-sublime-text-setup/)
-- [How I Use Chrome to Run a Web Design Business](https://zackphilipps.com/how-i-use-chrome-to-run-a-web-design-business/)
+- [A Front End Developer’s Daily App Stack](https://zackphilipps.dev/posts/a-front-end-developers-daily-app-stack/)
+- [A Front End Developer's Sublime Text Setup](https://zackphilipps.dev/posts/a-front-end-developers-sublime-text-setup/)
+- [How I Use Chrome to Run a Web Design Business](https://zackphilipps.dev/posts/how-i-use-chrome-to-run-a-web-design-business/)
