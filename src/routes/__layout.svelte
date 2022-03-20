@@ -53,7 +53,7 @@
             </a>
           </li>
           <li class="py-1 md:py-0 md:px-4">
-            <a class="flex items-center" href="mailto:hello@zackphilipps.com">
+            <a class="flex items-center" href="mailto:hello@zackphilipps.dev">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 class="h-6 w-6 mr-2"
