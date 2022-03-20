@@ -26,18 +26,16 @@
   const posts = [...globToArray(modules)].sort((a, b) => {
     return compareDesc(parseISO(a.metadata.date), parseISO(b.metadata.date))
   })
-
-  console.log(posts)
 </script>
 
 <svelte:head>
   <title>Indianapolis full-stack web developer | Zack Philipps</title>
 </svelte:head>
 
-<section id="writings" class="py-12 md:py-24 bg-teal-alt-800 -mx-8 -mb-8 px-8 text-teal-alt-100">
+<section id="writings" class="py-12 md:py-24 bg-teal-alt-800 -mx-8 px-8 text-teal-alt-100">
   <div class="container mx-auto max-w-3xl">
     <h2 class="text-2xl italic mb-3">Writings</h2>
-    <div class="pl-6">
+    <div class="md:pl-6">
       {#each posts as post}
         <article class="py-2 border-b border-b-teal-alt-700 border-dotted last:border-b-0">
           <h3 class="md:flex justify-between text-xl">

@@ -17,11 +17,22 @@ h4 {
   @apply whitespace-nowrap text-ellipsis overflow-hidden;
 }
 
-/* @media (max-width: 1199px) {
+/* @media (max-width: 1199px) { */
+pre {
+  width: 100vw;
+  max-width: 100vw;
+  position: relative;
+  left: calc(-50vw + 50%);
+  border-radius: 0 !important;
+}
+
+@screen md {
   pre {
-    width: 100vw;
+    width: 76vw;
+    max-width: 76vw;
     position: relative;
-    left: calc(-50vw + 50%);
-    border-radius: 0 !important;
+    left: calc(-38vw + 50%);
+    border-radius: theme('borderRadius.DEFAULT') !important;
   }
-} */
+}
+/* } */

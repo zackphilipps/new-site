@@ -39,6 +39,8 @@ The function is called `assignTrackingParameterToCookie`, and it accepts two arg
 
 Here is the full code snippet for you to copy and modify:
 
+> If you’d rather do a quick Select All, Copy, and Paste, here’s the [raw code](https://gist.githubusercontent.com/zackphilipps/a63ae55f13b06c1b443e755fa8e8404f/raw/016b1bbbeb4ca2d7325088fea596293129dc3a4b/assignTrackingParameterToCookie.js).
+
 ```js
 // Pass Tracking Parameters to a Form on Another Page Using GTM
 // http://zackphilipps.com/store-gclid-cookie-send-to-hubspot/
@@ -68,6 +70,9 @@ function assignTrackingParameterToCookie(fieldParam, formType = 'hubspot') {
     setCookie(fieldParam, field, 365)
   }
 
+  /**
+   * Add other form types / input query selectors here.
+   */
   if (formType === 'gform') {
     inputs = document.querySelectorAll('.' + fieldParam + ' input[type="text"]')
     assignCookieValueToFormInput(fieldParam, inputs)
@@ -76,6 +81,9 @@ function assignTrackingParameterToCookie(fieldParam, formType = 'hubspot') {
     assignCookieValueToFormInput(fieldParam, inputs)
   }
 
+  /**
+   * Do not edit.
+   */
   function assignCookieValueToFormInput(fieldParam, inputs) {
     var field = getCookie(fieldParam),
       length = inputs.length
@@ -88,7 +96,7 @@ function assignTrackingParameterToCookie(fieldParam, formType = 'hubspot') {
   }
 
   /**
-   * utility functions
+   * Utility functions. Do not edit.
    */
   function getCookie(name) {
     var value = '; ' + document.cookie
