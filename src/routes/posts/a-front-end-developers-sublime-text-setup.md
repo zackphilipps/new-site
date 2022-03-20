@@ -7,7 +7,7 @@ date: 2015-03-27
 
 # {title}
 
-This post – as well as my other post [A Front End Developer’s Daily App Stack](https://zackphilipps.com/a-front-end-developers-daily-app-stack/) – is 100% inspired by [A Designer’s Sublime Text Setup](https://medium.com/design-notes/a-designers-sublime-text-setup-e3963f8d79da).
+This post – as well as my other post [A Front End Developer’s Daily App Stack](https://zackphilipps.dev/posts/a-front-end-developers-daily-app-stack/) – is 100% inspired by [A Designer’s Sublime Text Setup](https://medium.com/design-notes/a-designers-sublime-text-setup-e3963f8d79da).
 
 If you're following along, as a prerequisite you should definitely upgrade to [Sublime Text 3](https://www.sublimetext.com/3) if you haven't already, and likewise [install Package Control](https://packagecontrol.io/installation).
 
@@ -145,7 +145,7 @@ My preferences are a combination of Mathias's and Jamie's preferences with a few
 
 [JavaScript Beautify](https://github.com/enginespot/js-beautify-sublime) – Automatically formats my JS just the way I like every time I hit _Save._
 
-[Package Syncing](https://github.com/csch0/SublimeText-Package-Syncing) – Suggested by Matej and loved by many. Uses Dropbox to sync your Sublime preferences across devices. This is what we use at work so we all have the same ST3 setup. Referenced in the post about [my daily app stack](https://zackphilipps.com/a-front-end-developers-daily-app-stack/).
+[Package Syncing](https://github.com/csch0/SublimeText-Package-Syncing) – Suggested by Matej and loved by many. Uses Dropbox to sync your Sublime preferences across devices. This is what we use at work so we all have the same ST3 setup. Referenced in the post about [my daily app stack](https://zackphilipps.dev/posts/a-front-end-developers-daily-app-stack/).
 
 [Sass](https://packagecontrol.io/packages/Sass) – Sass syntax support.
 
@@ -161,6 +161,6 @@ My preferences are a combination of Mathias's and Jamie's preferences with a few
 
 #### Related Posts
 
-- [A Front End Developer’s Daily App Stack](https://zackphilipps.com/a-front-end-developers-daily-app-stack/)
-- [A WordPress Development Workflow for Small Teams in 2015](https://zackphilipps.com/a-wordpress-development-workflow-for-small-teams-in-2015/)
-- [How I Use Chrome to Run a Web Design Business](https://zackphilipps.com/how-i-use-chrome-to-run-a-web-design-business/)
+- [A Front End Developer’s Daily App Stack](https://zackphilipps.dev/posts/a-front-end-developers-daily-app-stack/)
+- [A WordPress Development Workflow for Small Teams in 2015](https://zackphilipps.dev/posts/a-wordpress-development-workflow-for-small-teams-in-2015/)
+- [How I Use Chrome to Run a Web Design Business](https://zackphilipps.dev/posts/how-i-use-chrome-to-run-a-web-design-business/)

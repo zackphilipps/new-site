@@ -17,7 +17,7 @@ Maybe it's just what I'm used to, but Chrome's developer tools seem unparalleled
 
 I have to make the distinction with "Beta" here, because using the beta version ensures that I'm at least one step ahead of what my clients are using. This makes troubleshooting errors due to browser updates a more preemptive process for me. I don't like to use Canary, the bleeding-edge version, because key components of it can break from time to time and impede my workflow.
 
-Of course within Chrome or any browser, there's a whole slew of other stuff you can talk about like extensions and the web apps you use, but [I'll save that for another post.](https://zackphilipps.com/how-i-use-chrome-to-run-a-web-design-business/)
+Of course within Chrome or any browser, there's a whole slew of other stuff you can talk about like extensions and the web apps you use, but [I'll save that for another post.](https://zackphilipps.dev/posts/how-i-use-chrome-to-run-a-web-design-business/)
 
 #### Transmit
 
@@ -27,7 +27,7 @@ Why is it the best? It's simple to configure and use, you can save and sync conn
 
 #### Sublime Text
 
-I love to customize things, which makes me greatly appreciate any software that lets me do it. Sublime is extremely customizable, and it's easy! You can set your own preferences and key-bindings. Plus, there is a huge, thriving community of developers that have made packages, themes, and color schemes for Sublime. I can and should talk about [my Sublime setup in another post](https://zackphilipps.com/a-front-end-developers-sublime-text-setup).
+I love to customize things, which makes me greatly appreciate any software that lets me do it. Sublime is extremely customizable, and it's easy! You can set your own preferences and key-bindings. Plus, there is a huge, thriving community of developers that have made packages, themes, and color schemes for Sublime. I can and should talk about [my Sublime setup in another post](https://zackphilipps.dev/posts/a-front-end-developers-sublime-text-setup).
 
 Sublime is also the fastest-launching text editor I have ever used. I hated waiting on Brackets / Edge Code to open up when I used them.
 
@@ -91,6 +91,6 @@ Without this, I would never be able to teach my clients how to manage their webs
 
 #### Related Posts
 
-- [A WordPress Development Workflow for Small Teams in 2015](https://zackphilipps.com/a-wordpress-development-workflow-for-small-teams-in-2015/)
-- [A Front End Developer's Sublime Text Setup](https://zackphilipps.com/a-front-end-developers-sublime-text-setup/)
-- [How I Use Chrome to Run a Web Design Business](https://zackphilipps.com/how-i-use-chrome-to-run-a-web-design-business/)
+- [A WordPress Development Workflow for Small Teams in 2015](https://zackphilipps.dev/posts/a-wordpress-development-workflow-for-small-teams-in-2015/)
+- [A Front End Developer's Sublime Text Setup](https://zackphilipps.dev/posts/a-front-end-developers-sublime-text-setup/)
+- [How I Use Chrome to Run a Web Design Business](https://zackphilipps.dev/posts/how-i-use-chrome-to-run-a-web-design-business/)
