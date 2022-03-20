@@ -151,8 +151,25 @@ module.exports = {
           css: {
             a: {
               textDecoration: 'none',
+
               '&:hover': {
                 textDecoration: 'underline'
+              }
+            },
+            blockquote: {
+              a: {
+                textDecoration: 'underline',
+                color: 'inherit',
+
+                '&:hover': {
+                  textDecoration: 'none'
+                }
+              },
+              p: {
+                '&:first-of-type:before, &:last-of-type:after': {
+                  content: '',
+                  display: 'none'
+                }
               }
             }
           }
@@ -164,8 +181,8 @@ module.exports = {
             '--tw-prose-lead': theme('colors.teal[700]'),
             '--tw-prose-links': theme('colors.blue[400]'),
             '--tw-prose-bold': theme('colors.teal[800]'),
-            '--tw-prose-counters': theme('colors.teal[600]'),
-            '--tw-prose-bullets': theme('colors.teal[400]'),
+            '--tw-prose-counters': theme('colors.teal[300]'),
+            '--tw-prose-bullets': theme('colors.teal[300]'),
             '--tw-prose-hr': theme('colors.teal[200]'),
             '--tw-prose-quotes': theme('colors.teal[600]'),
             '--tw-prose-quote-borders': theme('colors.teal[300]'),

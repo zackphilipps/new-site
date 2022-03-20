@@ -2,13 +2,14 @@
   import '$lib/assets/css/app.css'
   import '$lib/assets/css/prism.css'
   import ProfilePhoto from '$lib/assets/images/zack-philipps-profile-photo.jpg'
+  import Footer from '$lib/components/Footer.svelte'
   import Prose from '$lib/components/Prose.svelte'
 </script>
 
 <div class="p-8">
-  <header class="border-b border-b-teal-200 pt-2 pb-1 px-2 -mt-8 -mx-8 sticky top-0 bg-teal-alt-100 z-50">
-    <p>
-      <a href="/" class="group inline-flex items-center">
+  <header class="border-b border-b-teal-200 bg-teal-alt-100 pt-2 pb-1 px-2 -mt-8 -mx-8 sticky top-0 z-50">
+    <p class="text-sm">
+      <a href="/" class="group flex items-center">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           class="h-5 w-5 group-hover:-translate-x-0.5"
@@ -24,7 +25,7 @@
           src={ProfilePhoto}
           alt="Zack Philipps Avatar"
         />
-        <span><strong>Zack Philipps</strong> // Full-stack web developer</span>
+        <span class="flex-auto ellipsis"><strong>Zack Philipps</strong> // Full-stack web developer</span>
       </a>
     </p>
   </header>
@@ -45,9 +46,11 @@
           >
             <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
           </svg>
-          More posts
+          Back to home page
         </a>
       </Prose>
     </article>
   </main>
+
+  <Footer />
 </div>
