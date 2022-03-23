@@ -13,7 +13,7 @@
       </div>
       <h2 class="md:text-center !mt-8 !mb-2 md:!mt-12 md:!mb-4">👋 I’m Zack.</h2>
       <p class="md:text-center text-blue-600">
-        I'm a full-stack web developer from Indianapolis. I have been building websites, web apps, design systems,
+        I’m a full-stack web developer from Indianapolis. I have been building websites, web apps, design systems,
         custom integrations, developer tools, and other cool things for about 10 years.
       </p>
       <nav class="not-prose">
