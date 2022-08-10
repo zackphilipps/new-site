@@ -36,3 +36,38 @@ pre {
   }
 }
 /* } */
+
+.icon-link {
+  display: none;
+  position: absolute;
+  right: 100%;
+}
+
+.icon-link:before {
+  content: '# ';
+}
+
+.prose {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    position: relative;
+    scroll-margin-top: calc(45px + 1rem);
+    padding-left: 0.5rem;
+    margin-left: -0.5rem;
+
+    &:hover {
+      .icon-link {
+        display: block;
+      }
+    }
+  }
+
+  :where(li p) {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+}

@@ -1,5 +1,5 @@
 module.exports = {
-  content: ['./src/**/*.{html,js,svelte,ts}'],
+  content: ['./src/**/*.{html,js,svelte,ts,md}'],
   theme: {
     colors: {
       transparent: 'transparent',
@@ -150,20 +150,18 @@ module.exports = {
         DEFAULT: {
           css: {
             a: {
-              textDecoration: 'none',
+              textDecoration: 'underline',
+              fontStyle: 'normal',
 
               '&:hover': {
-                textDecoration: 'underline'
+                '&:hover': {
+                  textDecoration: 'none'
+                }
               }
             },
             blockquote: {
               a: {
-                textDecoration: 'underline',
-                color: 'inherit',
-
-                '&:hover': {
-                  textDecoration: 'none'
-                }
+                color: 'inherit'
               },
               p: {
                 '&:first-of-type:before, &:last-of-type:after': {
