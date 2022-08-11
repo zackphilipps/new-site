@@ -3,6 +3,7 @@ title: Adventures with Storybook, TypeScript, and Styled Components
 slug: storybook-csf-mdx-known-issues-typescript-styled-components
 description: A collection of known issues and workarounds for Storybook with CSF stories, MDX docs, TypeScript, and Styled Components.
 date: 2022-08-09
+featuredImage: /images/2022/08/storybook-ui-example.png
 ---
 
 <time class="block text-teal-600 italic mb-4" datetime={date}>Aug 9, 2022</time>
