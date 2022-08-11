@@ -19,7 +19,7 @@
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />
   {#if featuredImage}
-    <meta property="og:image" content={featuredImage} />
+    <meta property="og:image" content={window.location.origin + featuredImage} />
   {/if}
   <meta property="og:url" content={url} />
 
@@ -27,6 +27,6 @@
   <meta name="twitter:title" content={title} />
   <meta name="twitter:description" content={description} />
   {#if featuredImage}
-    <meta name="twitter:image" content={featuredImage} />
+    <meta name="twitter:image" content={window.location.origin + featuredImage} />
   {/if}
 </svelte:head>
