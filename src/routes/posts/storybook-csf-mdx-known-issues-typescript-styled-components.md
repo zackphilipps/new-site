@@ -161,7 +161,11 @@ In summary:
 - Exclude `as`, `forwardedAs`, `theme`, and `ref` from all ArgsTables using a global `propFilter`, but be aware that you will need to re-provide some default Storybook TypeScript config such as `shouldExtractLiteralValuesFromEnum` and `shouldRemoveUndefinedFromOptional`.
 - Refer to [documented workarounds for HOCs](https://github.com/storybookjs/storybook/issues/9023#issuecomment-560377577).
 
-Hopefully this serves as a guide for you to create your own Storybook docs templates, or at least a helpful bookmark! If you've read this, tried everything, and are still scratching your head, I've opened a [GitHub discussion here.](https://github.com/storybookjs/storybook/discussions/18915) ✌️
+Hopefully this serves as a guide for you to create your own Storybook docs templates, or at least a helpful bookmark!
+
+### GitHub Discussion
+
+If you've read this, tried everything, and are still scratching your head, I've opened a [GitHub discussion here.](https://github.com/storybookjs/storybook/discussions/18915) ✌️
 
 ### Version info
 
