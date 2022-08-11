@@ -2,6 +2,9 @@ import { mdsvex } from 'mdsvex'
 import mdsvexConfig from './mdsvex.config.js'
 import adapter from '@sveltejs/adapter-auto'
 import preprocess from 'svelte-preprocess'
+import rehypeSlug from 'rehype-slug'
+import rehypeAutolinkHeadings from 'rehype-autolink-headings'
+import toc from 'remark-toc'
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -12,7 +15,9 @@ const config = {
   preprocess: [
     preprocess(),
     mdsvex({
-      ...mdsvexConfig
+      ...mdsvexConfig,
+      remarkPlugins: [toc],
+      rehypePlugins: [rehypeSlug, [rehypeAutolinkHeadings, { test: ['h2', 'h3', 'h4', 'h5', 'h6'] }]]
     })
   ],
 
