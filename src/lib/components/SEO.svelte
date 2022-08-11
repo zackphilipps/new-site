@@ -1,12 +1,14 @@
 <script lang="ts">
+  import { page } from '$app/stores'
   import { pageMeta } from '$lib/stores/metadata'
   export let title: string
   export let description: string
   export let slug: string
   export let featuredImage: string
-  export let url: string
+  let origin = $page.url.origin
+  let url = 'https://zackphilipps.dev' + $page.url.pathname
 
-  $pageMeta = { title, description, slug, featuredImage, url }
+  $pageMeta = { title, description, slug, featuredImage }
 </script>
 
 <svelte:head>
@@ -19,7 +21,7 @@
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />
   {#if featuredImage}
-    <meta property="og:image" content={window.location.origin + featuredImage} />
+    <meta property="og:image" content={origin + featuredImage} />
   {/if}
   <meta property="og:url" content={url} />
 
@@ -27,6 +29,6 @@
   <meta name="twitter:title" content={title} />
   <meta name="twitter:description" content={description} />
   {#if featuredImage}
-    <meta name="twitter:image" content={window.location.origin + featuredImage} />
+    <meta name="twitter:image" content={origin + featuredImage} />
   {/if}
 </svelte:head>

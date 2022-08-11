@@ -3,10 +3,10 @@
 
   export let title
   export let slug
+  // export let date
   export let description
   export let featuredImage
-  export let url = `https://zackphilipps.dev/posts/${slug}`
 </script>
 
-<SEO {title} {slug} {description} {featuredImage} {url} />
+<SEO {title} {slug} {description} {featuredImage} />
 <slot />
