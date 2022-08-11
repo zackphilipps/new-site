@@ -30,6 +30,7 @@
 
 <svelte:head>
   <title>Indianapolis full-stack web developer | Zack Philipps</title>
+  <link rel="canonical" href="https://zackphilipps.dev" />
 </svelte:head>
 
 <section id="writings" class="py-12 md:py-24 bg-teal-alt-800 -mx-8 px-8 text-teal-alt-100">

@@ -3,8 +3,10 @@
 
   export let title
   export let slug
+  // export let date
   export let description
+  export let featuredImage
 </script>
 
-<SEO {title} {slug} {description} />
+<SEO {title} {slug} {description} {featuredImage} />
 <slot />

@@ -4,14 +4,14 @@ import { defineMDSveXConfig as defineConfig } from 'mdsvex'
 const config = defineConfig({
   extensions: ['.svelte.md', '.md', '.svx'],
 
-  layout: './src/lib/components/PostLayout.svelte',
+  layout: './src/lib/components/PostLayout.svelte'
 
   // smartypants: {
   //   dashes: 'oldschool'
   // },
 
-  remarkPlugins: [],
-  rehypePlugins: []
+  // remarkPlugins: [],
+  // rehypePlugins: []
 })
 
 export default config
