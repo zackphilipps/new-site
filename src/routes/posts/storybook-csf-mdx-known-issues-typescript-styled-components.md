@@ -12,7 +12,7 @@ featuredImage: '/images/2022/08/storybook-ui-example.png'
 
 ![Storybook UI example](/images/2022/08/storybook-ui-example.png)
 
-Storybook is an amazing tool for building documentation that lives alongside a component library. It makes a lot of big promises, such as automatically generating documentation based on PropTypes or TypeScript type definitions, UI controls for changing props and previewing those changes, automatic code snippets, and more. Storybook offers zero-config TypeScript support and supports most JavaScript frameworks, including React, Vue, Svelte, Angular, and more.
+Storybook is an amazing tool for building documentation that lives alongside a component library. It can automatically generate documentation based on PropTypes or TypeScript type definitions, UI controls for changing props and previewing those changes, code snippets, and more. Storybook offers zero-config TypeScript support and supports most JavaScript frameworks, including React, Vue, Svelte, Angular, and more.
 
 However, supporting all of those different tools comes with a cost: introducing hundreds of edge cases that are extremely difficult and time-consuming to troubleshoot. In this post, I aim to describe some of the pain points I've faced when building a component library and docs site using TypeScript, Styled Components, and [Storybook with CSF stories and MDX docs](https://github.com/storybookjs/storybook/blob/master/addons/docs/docs/recipes.md#csf-stories-with-mdx-docs). I've spent untold hours scouring GitHub issues. This post is my attempt to round up some of the biggest head-scratchers I encountered in a central, easy-to-find place and hopefully augment Storybook's documentation on known issues.
 
@@ -146,6 +146,106 @@ module.exports = {
 GitHub issue: https://github.com/storybookjs/storybook/issues/9023
 
 This is similar to [the issue above](#styled-components-if-using-js-and-proptypes-argstable-wont-pull-props---11933), and [the workaround](https://github.com/storybookjs/storybook/issues/9023#issuecomment-560377577) is similar as well. If your HOC adds props, good luck!
+
+---
+
+## Templates
+
+Here are a few generic templates that take all of the above into consideration, and should work for you if you want to use Storybook with CSF stories, MDX docs, and TypeScript (with or without Styled Components.) Simply replace `MyComponent` with your component name, and you're off to the races.
+
+> Bonus points: Once you've tweaked these templates to your liking, implement a scaffolding tool so you don't have to keep doing the find & replace yourself. My personal favorite at the moment is [plop](https://plopjs.com/).
+
+```tree
+MyComponent
+├── index.ts
+├── MyComponent.stories.mdx
+├── MyComponent.stories.tsx
+└── MyComponent.tsx
+```
+
+### MyComponent.stories.tsx
+
+Stories with type checking.
+
+```tsx
+// MyComponent.stories.tsx
+import React from 'react'
+import { ComponentStory } from '@storybook/react'
+import { MyComponent } from './MyComponent'
+
+export const MyComponentStory: ComponentStory<typeof MyComponent> = (args) => {
+  return <MyComponent {...args} />
+}
+
+MyComponentStory.args = {
+  children: 'MyComponent example'
+}
+
+MyComponentStory.storyName = 'MyComponent'
+```
+
+### MyComponent.stories.mdx
+
+The actual docs page with embedded stories.
+
+```mdx
+<!-- MyComponent.stories.mdx -->
+
+import { ArgsTable, Canvas, Meta, Story, PRIMARY_STORY } from '@storybook/addon-docs'
+import { MyComponentStory } from './MyComponent.stories.tsx'
+import { MyComponent } from './MyComponent'
+
+<Meta component={MyComponent} title="MyComponent" />
+
+<Canvas withSource="open">
+  <Story story={MyComponentStory} />
+</Canvas>
+
+<!-- `story={PRIMARY_STORY}` is key here for working ArgsTable controls -->
+
+<ArgsTable of={MyComponent} story={PRIMARY_STORY} />
+```
+
+### MyComponent.tsx
+
+The component source code.
+
+```tsx
+// MyComponent.tsx
+import React from 'react'
+
+export interface MyComponentProps {
+  children?: React.ReactNode
+}
+
+export const MyComponent = ({ children }: MyComponentProps) => {
+  return <>{children}</>
+}
+
+MyComponent.displayName = 'MyComponent'
+
+export default MyComponent
+```
+
+### index.ts
+
+```ts
+// index.ts
+export * from './MyComponent'
+```
+
+### Storybook config
+
+Finally, here is a base Storybook config that should work well with these templates:
+
+```js
+// .storybook/main.js
+module.exports = {
+  framework: '@storybook/react',
+  stories: ['../src/**/*.stories.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
+  addons: ['@storybook/addon-essentials']
+}
+```
 
 ---
 
